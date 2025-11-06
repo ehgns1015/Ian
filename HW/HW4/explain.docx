@@ -1,0 +1,43 @@
+Object Creation and Attribute Access
+Python
+
+my_car = Car("red", "Sonata")
+your_car = Car("blue", "Avante")
+These two lines use the Car class as a blueprint to create two independent objects (instances) in memory.
+
+Creating the my_car object: Python calls Car(), allocating memory for a new Car object. The object's __init__ method is automatically called, passing "red" and "Sonata" as arguments. As a result, my_car becomes a unique object with its own set of attributes: color is "red", model is "Sonata", and speed is 0.
+
+Creating the your_car object: The exact same process is repeated. your_car is a completely separate object from my_car and has its own attributes, with color set to "blue" and model set to "Avante".
+
+Python
+
+print(f"My car is a {my_car.color} {my_car.model}.")
+This line directly accesses the unique attributes of the my_car object to print their values. By using dot notation (my_car.color), we retrieve the color attribute's value ("red") from that specific object.
+
+Method Calls and Object State Change
+Python
+
+my_car.accelerate()
+my_car.accelerate()
+your_car.accelerate()
+These lines call a method on an object to change its state.
+
+Calling my_car.accelerate(): The accelerate method is executed for the my_car object. The self parameter inside the method automatically refers to my_car, and the self.speed += 10 code changes the speed attribute of the my_car object to 10.
+
+Second my_car.accelerate() call: The method is called on the my_car object again, increasing its speed to 20.
+
+Calling your_car.accelerate(): At this point, the your_car object becomes the target of the method execution. The speed of your_car is increased to 10, completely independent of my_car's speed.
+
+Each object manages its speed attribute independently, so calling a method on one object does not affect the state of another.
+
+Final State Check and Method Utilization
+Python
+
+print(f"Speed of my car ({my_car.model}): {my_car.speed} km/h")
+print(f"Speed of your car ({your_car.model}): {your_car.speed} km/h")
+These print statements show the final results of the previous method calls, confirming that my_car's speed is 20 and your_car's speed is 10. This demonstrates that each object's attributes were managed independently.
+
+Python
+
+my_car.brake()
+Finally, calling the brake method on the my_car object executes self.speed = 0 inside the method, resetting the my_car object's speed to zero. This is another example of a method manipulating an object's state as intended.
