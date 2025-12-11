@@ -6,6 +6,7 @@ It initializes the object's attributes.
 
 Source: Object.docx - Section 1: Constructor
 """
+from math import pi, pow
 
 # Basic constructor
 class Person:
@@ -59,8 +60,8 @@ except ValueError as e:
 class Circle:
     def __init__(self, radius):
         self.radius = radius
-        self.area = 3.14159 * radius ** 2
-        self.circumference = 2 * 3.14159 * radius
+        self.area = pi * pow(radius, 2)
+        self.circumference = 2 * pi * radius
 
 print("\n=== CALCULATED ATTRIBUTES ===\n")
 
@@ -81,7 +82,7 @@ class Employee:
 
 print("\n=== CALLING METHODS IN CONSTRUCTOR ===\n")
 
-emp = Employee("Bob", 5000)
+emp = Employee("Ian", 5000)
 print(f"{emp.name}: Monthly ${emp.salary}, Annual ${emp.annual_salary}")
 
 # Practical examples
